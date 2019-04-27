@@ -813,10 +813,10 @@ class TwentyCrop(object):
         first_ten = F.ten_crop(img, self.size, vertical_flip=False)
         img = F.vflip(img)
         
-        return first_ten + F.ten_crop(img, self.size, self.vertical_flip)
+        return first_ten + F.ten_crop(img, self.size, vertical_flip=False)
 
     def __repr__(self):
-        return self.__class__.__name__ + '(size={0}, vertical_flip={1})'.format(self.size, self.vertical_flip)
+        return self.__class__.__name__ + '(size={0})'.format(self.size)
 
 
 class LinearTransformation(object):
