@@ -157,8 +157,12 @@ class Tester(unittest.TestCase):
             transform.__repr__()
             ten_crop.__repr__()
 
-            vflipped_img = img.transpose(Image.FLIP_TOP_BOTTOM)
-            expected_output += ten_crop(vflipped_img)
+            if True:
+                vflipped_img = img.transpose(Image.FLIP_TOP_BOTTOM)
+                expected_output += ten_crop(vflipped_img)
+            else:
+                hflipped_img = img.transpose(Image.FLIP_LEFT_RIGHT)
+                expected_output += ten_crop(hflipped_img)
 
             assert len(results) == 20
             assert expected_output == results
